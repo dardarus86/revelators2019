@@ -11,6 +11,8 @@ TagManager:
   - Container
   - Spawn_Manager
   - Basic_Bullet
+  - Ground
+  - Player4
   layers:
   - Default
   - TransparentFX

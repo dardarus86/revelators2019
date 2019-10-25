@@ -2,9 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1 : MonoBehaviour
+public class Player : MonoBehaviour
 {
 
+    [SerializeField]
+    private string LHorizontal = "LHorizontal";
+    [SerializeField]
+    private string LVertical = "LVertical";
+    [SerializeField]
+    private string RHorizontal = "RHorizontal";
+    [SerializeField]
+    private string Rvertical = "RVertical";
     [SerializeField]
     private Wall wall;
     [SerializeField]
@@ -14,17 +22,32 @@ public class Player1 : MonoBehaviour
     [SerializeField]
     private float _cantFire = -1.0f;
     [SerializeField]
-    private int _lives = 5;
+    private int _lives = 3;
     [SerializeField]
     private SpawnManager _spawnManager;
     [SerializeField]
     private GameObject _basicBulletPrefab;
+    [SerializeField]
+    public GameObject spawn;
     
     
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(Random.Range(-2.1f, 4.0f), 0.75f, Random.Range(-0.2f, -7.0f));
+
+      if (gameObject.tag == "Player1" || gameObject.tag == "Player2")
+        {
+           // this.transform.position = new Vector3(Random.Range(-1.1f, 4.0f), 0.75f, Random.Range(-0.2f, -7.0f));
+           // this.transform.position = new Vector3(Random.Range(-1.1f, 4.0f), 3.75f, Random.Range(-0.2f, -7.0f));
+            // transform.position = new Vector3(Random.Range(-2.1f, 4.0f), 0.75f, Random.Range(-0.2f, -7.0f));
+        }
+        if (gameObject.tag == "Player3" || gameObject.tag == "Player4")
+        {
+            this.transform.position = new Vector3(Random.Range(7.37f, 13.3f), 3.75f, Random.Range(-0.63f, -6.1f));
+            // transform.position = new Vector3(Random.Range(-2.1f, 4.0f), 0.75f, Random.Range(-0.2f, -7.0f));
+        }
+
+       
         wall = GameObject.Find("Wall").GetComponent<Wall>();
         if(wall == null)
         {
@@ -46,8 +69,8 @@ public class Player1 : MonoBehaviour
 
     void CalculateMovement()
     {
-        float LhorizonalInput = Input.GetAxis("LHorizontal");
-        float LverticalInput =  Input.GetAxis("LVertical");
+        float LhorizonalInput = Input.GetAxis(LHorizontal);
+        float LverticalInput =  Input.GetAxis(LVertical);
 
         Vector3 direction = new Vector3(LhorizonalInput, 0, LverticalInput);
 
@@ -56,9 +79,9 @@ public class Player1 : MonoBehaviour
 
     void calculateRotation()
     {
-        float RhorizontalInput = Input.GetAxis("RHorizontal");
-        float RverticalInput = Input.GetAxis("RVertical");
-        print(RhorizontalInput + ", " + RverticalInput);
+        float RhorizontalInput = Input.GetAxis(RHorizontal);
+        float RverticalInput = Input.GetAxis(Rvertical);
+    
         transform.LookAt(transform.position + new Vector3(RhorizontalInput, 0, RverticalInput), Vector3.up);
    
     }
@@ -71,4 +94,16 @@ public class Player1 : MonoBehaviour
         newBullet.GetComponent<Basic_Bullet>().SetDirection(transform.forward);
         newBullet.GetComponent<Basic_Bullet>().SetOwnerTag(gameObject.tag);
     }
+
+    public void damage()
+    {
+        _lives--;
+
+        if (_lives < 1)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+   
 }
