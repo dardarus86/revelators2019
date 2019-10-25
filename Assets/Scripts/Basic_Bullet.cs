@@ -5,8 +5,9 @@ using UnityEngine;
 public class Basic_Bullet : MonoBehaviour
 {
     [SerializeField]
-    private float _speed = 8.0f;
+    private float _speed = 20.0f;
     private Vector3 direction;
+    private string _ownertag;
  
 
     // Update is called once per frame
@@ -24,5 +25,10 @@ public class Basic_Bullet : MonoBehaviour
     public void SetDirection(Vector3 dir)
     {
         direction = dir;
+    }
+
+    public void SetOwnerTag(string owner)
+    {
+        _ownertag = owner;
     }
 }

@@ -69,5 +69,6 @@ public class Player1 : MonoBehaviour
 
         GameObject newBullet = Instantiate(_basicBulletPrefab, transform.position + transform.forward, Quaternion.identity);
         newBullet.GetComponent<Basic_Bullet>().SetDirection(transform.forward);
+        newBullet.GetComponent<Basic_Bullet>().SetOwnerTag(gameObject.tag);
     }
 }
