@@ -8,6 +8,9 @@ TagManager:
   - Player2
   - Player3
   - Wall
+  - Container
+  - Spawn_Manager
+  - Basic_Bullet
   layers:
   - Default
   - TransparentFX
