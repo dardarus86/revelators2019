@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Basic_Bullet : MonoBehaviour
+public class Basic_Bullet_Blue : MonoBehaviour
 {
     [SerializeField]
     private float _speed = 20.0f;
@@ -15,6 +15,7 @@ public class Basic_Bullet : MonoBehaviour
     Player _player2;
     Player _player3;
     Player _player4;
+    
     private void Start()
     {
        // _player = GameObject.Find("Player").GetComponent<Player>();
@@ -23,11 +24,16 @@ public class Basic_Bullet : MonoBehaviour
         _player3 = GameObject.FindWithTag("Player3").GetComponent<Player>();
         _player4 = GameObject.FindWithTag("Player4").GetComponent<Player>();
 
+        //_player1._team = "Blue";
+        //_player2._team = "Blue";
+        //_player3._team = "Red";
+        //_player4._team = "Red";
+
     }
     // Update is called once per frame
     void Update()
     {
-        
+    
     }
 
 
@@ -35,7 +41,7 @@ public class Basic_Bullet : MonoBehaviour
     {
         direction = dir;
           GetComponent<Rigidbody>().velocity = direction * _speed * Time.deltaTime;
-        Destroy(this.gameObject, 2);
+        Destroy(this.gameObject, 1);
 
     }
 
@@ -44,27 +50,38 @@ public class Basic_Bullet : MonoBehaviour
         _ownertag = owner;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        print("hit trigger");
-       // other.GetComponent<Player>();
-        if (other.tag == "Player3")
-        {
-            _player3.damage();
-            Destroy(_player3.gameObject);
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    print("hit trigger");
+    //    if (other.tag == "Player1")
+    //    {
+    //        _player1.damage();
+    //        Destroy(_player3.gameObject);
+    //    }
+    //    else if (other.tag == "Player2")
+    //    {
+    //        _player2.damage();
+    //        Destroy(_player3.gameObject);
+    //    }
+
+    //    // other.GetComponent<Player>();
+    //    else if (other.tag == "Player3")
+    //    {
+    //        _player3.damage();
+    //        Destroy(_player3.gameObject);
+    //    }
+    //   else if (other.tag == "Player4")
+    //    {
+    //        _player4.damage();
+    //        Destroy(_player3.gameObject);
+    //    }
+    //}
 
     private void OnCollisionEnter(Collision collision)
     {
-
-        print("hit collider");
-       // other.GetComponent<Player>();
         if (collision.collider.tag == "Player3" || collision.collider.tag == "Player4")
         {
             collision.collider.GetComponent<Player>().damage();
-            
-           
         }
     }
 }

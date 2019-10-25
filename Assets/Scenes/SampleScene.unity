@@ -577,6 +577,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: player_4
       objectReference: {fileID: 0}
+    - target: {fileID: -5956691160819467940, guid: 28e5ffac9992eb64795200128d531e12,
+        type: 3}
+      propertyPath: _lives
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1664672328484623753, guid: 28e5ffac9992eb64795200128d531e12,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -615,7 +620,7 @@ PrefabInstance:
     - target: {fileID: 1664672328484623753, guid: 28e5ffac9992eb64795200128d531e12,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1664672328484623753, guid: 28e5ffac9992eb64795200128d531e12,
         type: 3}
@@ -670,15 +675,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -1209233360547707195, guid: 48d9a1e77a0fdad4bbf8f04e49177ac8,
-        type: 3}
-      propertyPath: _lives
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2939205155569473071, guid: 48d9a1e77a0fdad4bbf8f04e49177ac8,
         type: 3}
       propertyPath: m_Name
       value: player_3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1209233360547707195, guid: 48d9a1e77a0fdad4bbf8f04e49177ac8,
+        type: 3}
+      propertyPath: _lives
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2939205155569473076, guid: 48d9a1e77a0fdad4bbf8f04e49177ac8,
         type: 3}
@@ -718,7 +723,7 @@ PrefabInstance:
     - target: {fileID: 2939205155569473076, guid: 48d9a1e77a0fdad4bbf8f04e49177ac8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2939205155569473076, guid: 48d9a1e77a0fdad4bbf8f04e49177ac8,
         type: 3}
@@ -1012,6 +1017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10.1
+  MaxTime: 60
 --- !u!65 &1534514177
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1079,8 +1085,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534514174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.96, y: 0, z: -4.3}
-  m_LocalScale: {x: 0.5, y: 1, z: 16.55}
+  m_LocalPosition: {x: 5.96, y: 0.01, z: -4.36}
+  m_LocalScale: {x: 0.5, y: 1.23, z: 16.55}
   m_Children:
   - {fileID: 4592361}
   - {fileID: 297685988}

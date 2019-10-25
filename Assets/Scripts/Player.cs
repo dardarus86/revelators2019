@@ -26,11 +26,17 @@ public class Player : MonoBehaviour
     [SerializeField]
     private SpawnManager _spawnManager;
     [SerializeField]
-    private GameObject _basicBulletPrefab;
+    private GameObject _blueBulletPrefab;
+    [SerializeField]
+    private GameObject _redBulletPrefab;
     [SerializeField]
     public GameObject spawn;
-    
-    
+    [SerializeField]
+    public string _team;
+ 
+   
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,7 +66,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         CalculateMovement();
-        if (Input.GetKeyDown(KeyCode.JoystickButton7) && Time.time > _cantFire)
+        if (Input.GetKey(KeyCode.JoystickButton7) && Time.time > _cantFire)
         {
             FireBasicBullet();
         }
@@ -89,10 +95,19 @@ public class Player : MonoBehaviour
     void FireBasicBullet()
     {
         _cantFire = Time.time + _fireRate;
+        if( _team == "Blue")
+        {
+            GameObject newBullet = Instantiate(_blueBulletPrefab, transform.position + transform.forward, Quaternion.identity);
+            newBullet.GetComponent<Basic_Bullet_Blue>().SetDirection(transform.forward);
+            newBullet.GetComponent<Basic_Bullet_Blue>().SetOwnerTag(gameObject.tag);
+        }
 
-        GameObject newBullet = Instantiate(_basicBulletPrefab, transform.position + transform.forward, Quaternion.identity);
-        newBullet.GetComponent<Basic_Bullet>().SetDirection(transform.forward);
-        newBullet.GetComponent<Basic_Bullet>().SetOwnerTag(gameObject.tag);
+        else if( _team == "Red")
+        {
+            GameObject newBullet = Instantiate(_redBulletPrefab, transform.position + transform.forward, Quaternion.identity);
+            newBullet.GetComponent<Basic_Bullet_Red>().SetDirection(transform.forward);
+            newBullet.GetComponent<Basic_Bullet_Red>().SetOwnerTag(gameObject.tag);
+        }
     }
 
     public void damage()
