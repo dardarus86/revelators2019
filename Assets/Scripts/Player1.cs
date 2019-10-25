@@ -9,6 +9,7 @@ public class Player1 : MonoBehaviour
     private Wall wall;
     [SerializeField]
     private float _mSpeed = 5.0f;
+    private float test = 6;
     // Start is called before the first frame update
     void Start()
     {
