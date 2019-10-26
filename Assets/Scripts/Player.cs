@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -38,6 +39,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _redBulletPrefab;
     [SerializeField]
+    private GameObject _blueGrenadePrefab;
+    [SerializeField]
+    private GameObject _redGrenadePrefab;
+    [SerializeField]
     public GameObject spawn;
     [SerializeField]
     public string _team;
@@ -47,6 +52,8 @@ public class Player : MonoBehaviour
     public AudioClip _deathSoundClip;
     [SerializeField]
     private AudioSource _audio;
+    [SerializeField]
+    public Slider health;
 
     private bool _isDead = false;
 
@@ -109,6 +116,12 @@ public class Player : MonoBehaviour
                 FireBasicBullet();
                 _audio.Play();
             }
+            if (Input.GetKey(KeyCode.Joystick1Button6) && Time.time > _cantFire)
+            {
+                print("controller 1 fired" + " " + Input.GetJoystickNames());
+                Grenade();
+                
+            }
         }
         if (Controller == "2")
         {
@@ -117,6 +130,12 @@ public class Player : MonoBehaviour
                 print("controller 2 fired" + " " + Input.GetJoystickNames());
                 FireBasicBullet();
                 _audio.Play();
+            }
+            if (Input.GetKey(KeyCode.Joystick1Button6) && Time.time > _cantFire)
+            {
+                print("controller 1 fired" + " " + Input.GetJoystickNames());
+                Grenade();
+
             }
         }
         if (Controller == "3")
@@ -177,20 +196,40 @@ public class Player : MonoBehaviour
         }
     }
 
+    void Grenade()
+    {
+        print("load grenade function");
+        _cantFire = Time.time + _fireRate;
+        if (_team == "Blue")
+        {
+            print(" Blue team");
+            GameObject newGrenade = Instantiate(_blueGrenadePrefab, transform.position, Quaternion.identity);
+            print(" instantiated");
+            newGrenade.GetComponent<Basic_Grenade_Blue>().SetDirection(transform.forward);
+            newGrenade.GetComponent<Basic_Grenade_Blue>().SetOwnerTag(gameObject.tag);
+            print(" set direction and set tag");
+
+        }
+
+        else if (_team == "Red")
+        {
+            GameObject newGrenade = Instantiate(_redGrenadePrefab, transform.position + transform.forward, Quaternion.identity);
+            newGrenade.GetComponent<Basic_Grenade_Red>().SetDirection(transform.forward);
+            newGrenade.GetComponent<Basic_Grenade_Red>().SetOwnerTag(gameObject.tag);
+
+        }
+
+    }
+
     public void damage()
     {
-       
         _lives--;
-        
+        health.value = _lives;
         if (_lives < 1)
         {
-            print("No lives remaining");
             Destroy(this.gameObject,1.0f);
-            print("Destroyed player");
             AudioSource.PlayClipAtPoint(_deathSoundClip, new Vector3(2.8f, 21.81f, -26.97f));
-            print(" Audio played");
-            
-
+  
         }
     }
 
