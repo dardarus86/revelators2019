@@ -57,7 +57,10 @@ public class Player : MonoBehaviour
 
     private bool _isDead = false;
 
+    private Vector3 forwardd;
 
+
+    Vector3 direction = Vector3.zero;
 
 
     // Start is called before the first frame update
@@ -131,7 +134,7 @@ public class Player : MonoBehaviour
                 FireBasicBullet();
                 _audio.Play();
             }
-            if (Input.GetKey(KeyCode.Joystick1Button6) && Time.time > _cantFire)
+            if (Input.GetKey(KeyCode.Joystick2Button6) && Time.time > _cantFire)
             {
                 print("controller 1 fired" + " " + Input.GetJoystickNames());
                 Grenade();
@@ -198,15 +201,16 @@ public class Player : MonoBehaviour
 
     void Grenade()
     {
-        print("load grenade function");
+        
         _cantFire = Time.time + _fireRate;
         if (_team == "Blue")
         {
+            direction = transform.forward + (transform.rotation * new Vector3(0, 70, 70));
             print(" Blue team");
-            GameObject newGrenade = Instantiate(_blueGrenadePrefab, transform.position, Quaternion.identity);
+            GameObject newGrenade = Instantiate(_blueGrenadePrefab, transform.position + transform.forward, Quaternion.identity);
             print(" instantiated");
-            newGrenade.GetComponent<Basic_Grenade_Blue>().SetDirection(transform.forward);
-            newGrenade.GetComponent<Basic_Grenade_Blue>().SetOwnerTag(gameObject.tag);
+            newGrenade.GetComponent<bulletgrenade>().SetDirection(direction);
+            newGrenade.GetComponent<bulletgrenade>().SetOwnerTag(gameObject.tag);
             print(" set direction and set tag");
 
         }
@@ -233,6 +237,9 @@ public class Player : MonoBehaviour
         }
     }
 
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawRay(transform.position, direction * 50);
+    }
 
 }

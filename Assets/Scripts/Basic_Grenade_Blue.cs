@@ -11,7 +11,7 @@ public class Basic_Grenade_Blue : MonoBehaviour
 
     float countdown;
     bool hasExploded = false;
-    public GameObject explosionEffect;
+    //public GameObject explosionEffect;
     [SerializeField]
     private float _speed = 20.0f;
     [SerializeField]
@@ -65,7 +65,7 @@ public class Basic_Grenade_Blue : MonoBehaviour
     void Explode()
     {
         
-        Instantiate(explosionEffect, transform.position, transform.rotation);
+        //Instantiate(explosionEffect, transform.position, transform.rotation);
      
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);

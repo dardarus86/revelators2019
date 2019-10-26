@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Basic_Grenade_Red : MonoBehaviour
+public class bulletgrenade : MonoBehaviour
 {
     public float delay = 4f;
     public float radius = 5f;
@@ -16,6 +16,7 @@ public class Basic_Grenade_Red : MonoBehaviour
     private float _speed = 20.0f;
     [SerializeField]
     private Vector3 direction;
+
     [SerializeField]
     private string _ownertag;
     [SerializeField]
@@ -39,13 +40,10 @@ public class Basic_Grenade_Red : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //animation += Time.deltaTime;
-        //animation = animation % 5;
-        //transform.position = MathParabola.Parabola(Vector3.zero, Vector3.forward * 10f, 5f, animation / 5f);
         countdown -= Time.deltaTime;
         if (countdown <= 0f && !hasExploded)
         {
-            Explode();
+           Explode();
             hasExploded = true;
         }
     }
@@ -54,7 +52,7 @@ public class Basic_Grenade_Red : MonoBehaviour
     {
         direction = dir;
         GetComponent<Rigidbody>().velocity = direction * _speed * Time.deltaTime;
-        Destroy(this.gameObject, 1);
+        Destroy(this.gameObject, 6);
 
     }
 
@@ -62,6 +60,7 @@ public class Basic_Grenade_Red : MonoBehaviour
     {
         _ownertag = owner;
     }
+
     void Explode()
     {
 
@@ -83,9 +82,13 @@ public class Basic_Grenade_Red : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "Player1" || collision.collider.tag == "Player2")
+        if (collision.collider.tag == "Player3" || collision.collider.tag == "Player4")
         {
             collision.collider.GetComponent<Player>().damage();
         }
+    }
+    private void OnDrawGizmos()
+    {
+        
     }
 }

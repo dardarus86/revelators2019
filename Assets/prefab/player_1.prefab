@@ -125,11 +125,15 @@ MonoBehaviour:
   _blueBulletPrefab: {fileID: 5790379812544060569, guid: 901c7f4b89a5aba4f914138fdc25f6bd,
     type: 3}
   _redBulletPrefab: {fileID: 0}
+  _blueGrenadePrefab: {fileID: 7582157717423469549, guid: f61bf6eed58c34645b1b5e5913cf49c1,
+    type: 3}
+  _redGrenadePrefab: {fileID: 0}
   spawn: {fileID: 0}
   _team: Blue
   _fireSoundClip: {fileID: 8300000, guid: 5c2f7c81a8767ee4ea91bfc774282c89, type: 3}
   _deathSoundClip: {fileID: 8300000, guid: 7458be59421156e4bb34a31b2ec349d0, type: 3}
   _audio: {fileID: 0}
+  health: {fileID: 0}
 --- !u!54 &477517196
 Rigidbody:
   m_ObjectHideFlags: 0
