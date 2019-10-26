@@ -423,6 +423,12 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 9887989}
+    - target: {fileID: -1209233360547707195, guid: 48d9a1e77a0fdad4bbf8f04e49177ac8,
+        type: 3}
+      propertyPath: _redGrenadePrefab
+      value: 
+      objectReference: {fileID: 5691926636271670475, guid: 1112b7c3aff3bd34785edfc2dd01e24e,
+        type: 3}
     - target: {fileID: 2939205155569473076, guid: 48d9a1e77a0fdad4bbf8f04e49177ac8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -461,7 +467,7 @@ PrefabInstance:
     - target: {fileID: 2939205155569473076, guid: 48d9a1e77a0fdad4bbf8f04e49177ac8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2939205155569473076, guid: 48d9a1e77a0fdad4bbf8f04e49177ac8,
         type: 3}
@@ -560,7 +566,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: bdd1a657cf643e841878dc6e37dc96b7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: bdd1a657cf643e841878dc6e37dc96b7,
         type: 3}
@@ -1634,7 +1640,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Player 3
+  m_Text: Player 4
 --- !u!222 &998719649
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1693,7 +1699,7 @@ PrefabInstance:
     - target: {fileID: 5327427698749216168, guid: 3816292df5d095d47968d0e73999df69,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5327427698749216168, guid: 3816292df5d095d47968d0e73999df69,
         type: 3}
@@ -1715,6 +1721,12 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 444111272}
+    - target: {fileID: 2006221718400838619, guid: 3816292df5d095d47968d0e73999df69,
+        type: 3}
+      propertyPath: _blueGrenadePrefab
+      value: 
+      objectReference: {fileID: 884419008057574489, guid: 9dc6662b5e00adb47af6b0b6e24d740a,
+        type: 3}
     - target: {fileID: 3306764803663030385, guid: 3816292df5d095d47968d0e73999df69,
         type: 3}
       propertyPath: m_Mesh
@@ -1786,7 +1798,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1044091119
 GameObject:
@@ -1892,7 +1904,7 @@ Transform:
   m_Children:
   - {fileID: 1387245835}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1196079141
 GameObject:
@@ -2157,6 +2169,12 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 814772451}
+    - target: {fileID: -5956691160819467940, guid: 28e5ffac9992eb64795200128d531e12,
+        type: 3}
+      propertyPath: _redGrenadePrefab
+      value: 
+      objectReference: {fileID: 5691926636271670475, guid: 1112b7c3aff3bd34785edfc2dd01e24e,
+        type: 3}
     - target: {fileID: 1664672328484623753, guid: 28e5ffac9992eb64795200128d531e12,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2195,7 +2213,7 @@ PrefabInstance:
     - target: {fileID: 1664672328484623753, guid: 28e5ffac9992eb64795200128d531e12,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1664672328484623753, guid: 28e5ffac9992eb64795200128d531e12,
         type: 3}
@@ -2395,7 +2413,7 @@ PrefabInstance:
     - target: {fileID: 5621841181556753375, guid: 8e44b332ed549a94c81a23e877db05cd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5621841181556753375, guid: 8e44b332ed549a94c81a23e877db05cd,
         type: 3}
@@ -2417,6 +2435,12 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 635128091}
+    - target: {fileID: -7750111257724279157, guid: 8e44b332ed549a94c81a23e877db05cd,
+        type: 3}
+      propertyPath: _blueGrenadePrefab
+      value: 
+      objectReference: {fileID: 884419008057574489, guid: 9dc6662b5e00adb47af6b0b6e24d740a,
+        type: 3}
     - target: {fileID: 7528181324564744354, guid: 8e44b332ed549a94c81a23e877db05cd,
         type: 3}
       propertyPath: m_Mesh
