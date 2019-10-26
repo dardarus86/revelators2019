@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -47,6 +48,8 @@ public class Player : MonoBehaviour
     public AudioClip _deathSoundClip;
     [SerializeField]
     private AudioSource _audio;
+    [SerializeField]
+    public Slider health;
 
     private bool _isDead = false;
 
@@ -181,14 +184,13 @@ public class Player : MonoBehaviour
     {
        
         _lives--;
-        
+        health.value = _lives;
         if (_lives < 1)
         {
-            print("No lives remaining");
+            
             Destroy(this.gameObject,1.0f);
-            print("Destroyed player");
             AudioSource.PlayClipAtPoint(_deathSoundClip, new Vector3(2.8f, 21.81f, -26.97f));
-            print(" Audio played");
+           
             
 
         }

@@ -403,7 +403,7 @@ MonoBehaviour:
   _mSpeed: 5
   _fireRate: 0.2
   _cantFire: -1
-  _lives: 1
+  _lives: 100
   _spawnManager: {fileID: 0}
   _blueBulletPrefab: {fileID: 0}
   _redBulletPrefab: {fileID: 1465372570271321376, guid: 4833f8c620aa29942a46e82fd8a4644f,
@@ -411,7 +411,7 @@ MonoBehaviour:
   spawn: {fileID: 0}
   _team: Red
   _fireSoundClip: {fileID: 8300000, guid: 43eba090c3f01fb439ca3458bb658cf4, type: 3}
-  _deathSoundClip: {fileID: 8300000, guid: e09505a4aaf768d4ebbc72ff9b580be9, type: 3}
+  _deathSoundClip: {fileID: 8300000, guid: 7458be59421156e4bb34a31b2ec349d0, type: 3}
   _audio: {fileID: 0}
 --- !u!54 &1601998638
 Rigidbody:
