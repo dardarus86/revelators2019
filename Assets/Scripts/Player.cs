@@ -42,9 +42,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     public string _team;
     [SerializeField]
-    private AudioClip _fireSoundClip;
+    public AudioClip _fireSoundClip;
     [SerializeField]
-    private AudioClip _deathSoundClip;
+    public AudioClip _deathSoundClip;
     [SerializeField]
     private AudioSource _audio;
 
@@ -184,9 +184,11 @@ public class Player : MonoBehaviour
         
         if (_lives < 1)
         {
-          
-            Destroy(this.gameObject);
-            //AudioSource.PlayClipAtPoint(_deathSoundClip, new Vector3(5, 1, 2));
+            print("No lives remaining");
+            Destroy(this.gameObject,1.0f);
+            print("Destroyed player");
+            AudioSource.PlayClipAtPoint(_deathSoundClip, new Vector3(2.8f, 21.81f, -26.97f));
+            print(" Audio played");
             
 
         }
