@@ -33,10 +33,6 @@ public class Player : MonoBehaviour
     public GameObject spawn;
     [SerializeField]
     public string _team;
-    [SerializeField]
-    private AudioClip _shootSoundClip;
-    [SerializeField]
-    private AudioSource _audioSource;
  
    
 
@@ -57,20 +53,9 @@ public class Player : MonoBehaviour
             // transform.position = new Vector3(Random.Range(-2.1f, 4.0f), 0.75f, Random.Range(-0.2f, -7.0f));
         }
 
-        _audioSource = GetComponent<AudioSource>();
-
+       
         wall = GameObject.Find("Wall").GetComponent<Wall>();
-        if (_audioSource == null)
-        {
-            Debug.LogError(" audiosource is NULL");
-
-        }
-        else
-        {
-            _audioSource.clip = _shootSoundClip;
-        }
-
-        if (wall == null)
+        if(wall == null)
         {
             Debug.LogError(" Wall is NULL");
         }
@@ -84,7 +69,6 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.JoystickButton7) && Time.time > _cantFire)
         {
             FireBasicBullet();
-            _audioSource.Play();
         }
         calculateRotation();
     }
