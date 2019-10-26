@@ -102,9 +102,9 @@ GameObject:
   - component: {fileID: 5691926636271670478}
   - component: {fileID: 5691926636271670479}
   - component: {fileID: 5691926636271670476}
-  - component: {fileID: 5691926636271670477}
   - component: {fileID: 5691926636271670474}
   - component: {fileID: 5691926636271670480}
+  - component: {fileID: -2230949884574832501}
   m_Layer: 0
   m_Name: Basic_Grenade_Red
   m_TagString: Untagged
@@ -189,23 +189,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5691926636271670477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5691926636271670475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d29b6b90c7f4e444b8ab3e62ef05c4d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 5
-  radius: 5
-  force: 7000
-  explosionEffect: {fileID: 2096603831050870738, guid: d86fb11710645cb4d982bf10c6abb56a,
-    type: 3}
 --- !u!54 &5691926636271670474
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -238,3 +221,23 @@ MonoBehaviour:
   ParabolaRoot: {fileID: 5691926636271670475}
   Autostart: 1
   Animation: 1
+--- !u!114 &-2230949884574832501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5691926636271670475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b42d99b47dfb6b46aa73178b63fc629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 4
+  radius: 5
+  force: 700
+  explosionEffect: {fileID: 0}
+  _speed: 20
+  direction: {x: 0, y: 0, z: 0}
+  _ownertag: 
+  _player1: {fileID: 0}

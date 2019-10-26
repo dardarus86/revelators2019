@@ -198,11 +198,16 @@ public class Player : MonoBehaviour
 
     void Grenade()
     {
-        if (_team == "blue")
+        print("load grenade function");
+        _cantFire = Time.time + _fireRate;
+        if (_team == "Blue")
         {
-            GameObject newGrenade = Instantiate(_blueGrenadePrefab, transform.position + transform.forward, Quaternion.identity);
+            print(" Blue team");
+            GameObject newGrenade = Instantiate(_blueGrenadePrefab, transform.position, Quaternion.identity);
+            print(" instantiated");
             newGrenade.GetComponent<Basic_Grenade_Blue>().SetDirection(transform.forward);
             newGrenade.GetComponent<Basic_Grenade_Blue>().SetOwnerTag(gameObject.tag);
+            print(" set direction and set tag");
 
         }
 
