@@ -98,7 +98,7 @@ public class Player : MonoBehaviour
         }
 
 
-        wall = GameObject.Find("Wall").GetComponent<Wall>();
+        wall = GameObject.Find("centerpiece").GetComponent<Wall>();
         if(wall == null)
         {
             Debug.LogError(" Wall is NULL");
