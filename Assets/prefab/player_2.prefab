@@ -330,7 +330,7 @@ MonoBehaviour:
   _blueBulletPrefab: {fileID: 5790379812544060569, guid: 901c7f4b89a5aba4f914138fdc25f6bd,
     type: 3}
   _redBulletPrefab: {fileID: 0}
-  _blueGrenadePrefab: {fileID: 7582157717423469549, guid: f61bf6eed58c34645b1b5e5913cf49c1,
+  _blueGrenadePrefab: {fileID: 884419008057574489, guid: 9dc6662b5e00adb47af6b0b6e24d740a,
     type: 3}
   _redGrenadePrefab: {fileID: 0}
   spawn: {fileID: 0}

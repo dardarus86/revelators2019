@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletgrenade : MonoBehaviour
+public class Basic_Blue_Grenade : MonoBehaviour
 {
     public float delay = 4f;
     public float radius = 5f;
     public float force = 700f;
     // protected float animation;
-
+    [SerializeField]
+    private int grenadedamage = 25;
     float countdown;
     bool hasExploded = false;
 
@@ -28,8 +29,6 @@ public class bulletgrenade : MonoBehaviour
 
     private void Start()
     {
-        _player1 = GameObject.FindWithTag("Player1").GetComponent<Player>();
-        _player2 = GameObject.FindWithTag("Player2").GetComponent<Player>();
         _player3 = GameObject.FindWithTag("Player3").GetComponent<Player>();
         _player4 = GameObject.FindWithTag("Player4").GetComponent<Player>();
 
@@ -52,7 +51,7 @@ public class bulletgrenade : MonoBehaviour
     {
         direction = dir;
         GetComponent<Rigidbody>().velocity = direction * _speed * Time.deltaTime;
-        Destroy(this.gameObject, 6);
+        Destroy(this.gameObject, 4.1f);
 
     }
 
@@ -71,24 +70,21 @@ public class bulletgrenade : MonoBehaviour
 
         foreach (Collider nearbyObject in colliders)
         {
+            Player player = nearbyObject.GetComponent<Player>();
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
             if (rb != null)
             {
                 rb.AddExplosionForce(force, transform.position, radius);
+
+                if ( player.tag == "Player3" || player.tag == "Player4")
+                {
+                    player.damage(grenadedamage);
+                }
+                
             }
         }
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag == "Player3" || collision.collider.tag == "Player4")
-        {
-            collision.collider.GetComponent<Player>().damage();
-        }
-    }
-    private void OnDrawGizmos()
-    {
-        
-    }
+
 }

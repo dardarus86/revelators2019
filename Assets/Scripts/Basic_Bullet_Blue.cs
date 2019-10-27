@@ -11,6 +11,8 @@ public class Basic_Bullet_Blue : MonoBehaviour
     [SerializeField]
     private string _ownertag;
     [SerializeField]
+    private int bulletdamage = 1;
+    [SerializeField]
     Player _player1;
     Player _player2;
     Player _player3;
@@ -81,7 +83,7 @@ public class Basic_Bullet_Blue : MonoBehaviour
     {
         if (collision.collider.tag == "Player3" || collision.collider.tag == "Player4")
         {
-            collision.collider.GetComponent<Player>().damage();
+            collision.collider.GetComponent<Player>().damage(bulletdamage);
         }
     }
 }

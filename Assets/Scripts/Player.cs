@@ -69,11 +69,11 @@ public class Player : MonoBehaviour
 
       if (gameObject.tag == "Player1" || gameObject.tag == "Player2")
         {
-           this.transform.position = new Vector3(Random.Range(-1.1f, 4.0f), 0.75f, Random.Range(-0.2f, -7.0f));
+           this.transform.position = new Vector3(Random.Range(-8.5f, 2.46f), 0.75f, Random.Range(-3.0f, -13.50f));
         }
         if (gameObject.tag == "Player3" || gameObject.tag == "Player4")
         {
-            this.transform.position = new Vector3(Random.Range(7.37f, 13.3f), 3.75f, Random.Range(-0.63f, -6.1f));
+            this.transform.position = new Vector3(Random.Range(6.3f, 18.0f), 3.75f, Random.Range(-2.72f, -11.0f));
         }
 
 
@@ -209,8 +209,8 @@ public class Player : MonoBehaviour
             print(" Blue team");
             GameObject newGrenade = Instantiate(_blueGrenadePrefab, transform.position + transform.forward, Quaternion.identity);
             print(" instantiated");
-            newGrenade.GetComponent<bulletgrenade>().SetDirection(direction);
-            newGrenade.GetComponent<bulletgrenade>().SetOwnerTag(gameObject.tag);
+            newGrenade.GetComponent<Basic_Blue_Grenade>().SetDirection(direction);
+            newGrenade.GetComponent<Basic_Blue_Grenade>().SetOwnerTag(gameObject.tag);
             print(" set direction and set tag");
 
         }
@@ -218,16 +218,16 @@ public class Player : MonoBehaviour
         else if (_team == "Red")
         {
             GameObject newGrenade = Instantiate(_redGrenadePrefab, transform.position + transform.forward, Quaternion.identity);
-            newGrenade.GetComponent<Basic_Grenade_Red>().SetDirection(transform.forward);
-            newGrenade.GetComponent<Basic_Grenade_Red>().SetOwnerTag(gameObject.tag);
+            newGrenade.GetComponent<Basic_Red_Grenade>().SetDirection(transform.forward);
+            newGrenade.GetComponent<Basic_Red_Grenade>().SetOwnerTag(gameObject.tag);
 
         }
 
     }
 
-    public void damage()
+    public void damage(int damage)
     {
-        _lives--;
+        _lives =  _lives -= damage;
         health.value = _lives;
         if (_lives < 1)
         {

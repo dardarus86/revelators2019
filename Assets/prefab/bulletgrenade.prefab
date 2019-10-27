@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7959260496175244088}
   - component: {fileID: 6310178704657221252}
   - component: {fileID: 3000326679221887448}
-  - component: {fileID: 2333697967548184385}
   - component: {fileID: 3048014751999019694}
   m_Layer: 0
   m_Name: bulletgrenade
@@ -95,25 +94,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2333697967548184385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7582157717423469549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33f0db6070cec7c499ba2ca75891d92a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 3
-  radius: 5
-  force: 700
-  _speed: 8
-  direction: {x: 0, y: 0, z: 0}
-  _ownertag: 
-  _player1: {fileID: 0}
 --- !u!54 &3048014751999019694
 Rigidbody:
   m_ObjectHideFlags: 0

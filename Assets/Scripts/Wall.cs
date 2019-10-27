@@ -6,7 +6,7 @@ public class Wall : MonoBehaviour
 {
 
     [SerializeField]
-    private float _speed = 1.0f;
+    private float _speed = 0.2f;
     private float _multiplier = 0.02f;
     private float _Timer = 0.0f;
     public float MaxTime = 100000.0f;
@@ -22,6 +22,6 @@ public class Wall : MonoBehaviour
         transform.Rotate(new Vector3(0, _speed, 0) * Time.deltaTime);
         //_speed = _speed + _multiplier;
         _Timer += Time.deltaTime;
-        _speed = Mathf.Lerp(1.0f, 100.0f, _Timer / MaxTime);
+        _speed = Mathf.Lerp(0.2f, 50.0f, _Timer / MaxTime);
     }
 }

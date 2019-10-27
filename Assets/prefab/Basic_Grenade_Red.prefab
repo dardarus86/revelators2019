@@ -103,8 +103,7 @@ GameObject:
   - component: {fileID: 5691926636271670479}
   - component: {fileID: 5691926636271670476}
   - component: {fileID: 5691926636271670474}
-  - component: {fileID: 5691926636271670480}
-  - component: {fileID: -2230949884574832501}
+  - component: {fileID: -4221518067889305450}
   m_Layer: 0
   m_Name: Basic_Grenade_Red
   m_TagString: Untagged
@@ -205,7 +204,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5691926636271670480
+--- !u!114 &-4221518067889305450
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,30 +213,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5691926636271670475}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28af689573d013448b0c9171557c7317, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 20
-  ParabolaRoot: {fileID: 5691926636271670475}
-  Autostart: 1
-  Animation: 1
---- !u!114 &-2230949884574832501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5691926636271670475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b42d99b47dfb6b46aa73178b63fc629, type: 3}
+  m_Script: {fileID: 11500000, guid: aef851b2ff7f1634db97e5b0bcbf3ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 4
-  radius: 5
-  force: 700
-  explosionEffect: {fileID: 0}
-  _speed: 20
+  radius: 3
+  force: 300
+  grenadedamage: 3
+  _speed: 6
   direction: {x: 0, y: 0, z: 0}
   _ownertag: 
   _player1: {fileID: 0}
