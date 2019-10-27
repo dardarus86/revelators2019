@@ -610,6 +610,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: player_3
       objectReference: {fileID: 0}
+    - target: {fileID: 2939205155569473071, guid: 48d9a1e77a0fdad4bbf8f04e49177ac8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player3
+      objectReference: {fileID: 0}
     - target: {fileID: -1209233360547707195, guid: 48d9a1e77a0fdad4bbf8f04e49177ac8,
         type: 3}
       propertyPath: health
